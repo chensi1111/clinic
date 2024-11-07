@@ -2,7 +2,10 @@
     <div class="container">
         <div class="topic">~如有以上需求請聯繫薛顧問~</div>
         <div class="info">
-            <div class="clinic">聯醫時尚美學診所<br>United Medical Clinic</div>
+            <div class="clinic">
+                <div class="name">聯醫未來時尚美學診所</div>
+                <div class="name">United Medical Clinic</div>
+            </div>
             <div class="contact">
                 <div class="contactInfos">
                     <div class="contactInfo">Line官方ID:@089pahin</div>
@@ -45,12 +48,15 @@
     height: 200px;
 }
 .clinic{
-    font-family: Brush Script MT, Brush Script Std, cursive;
     font-style: italic;
     font-size: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.name{
+    font-family: Brush Script MT, Brush Script Std, cursive;
 }
 .contact{
     display: flex;
