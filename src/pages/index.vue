@@ -11,8 +11,9 @@ import theFooter from '../components/theFooter.vue';
 </script>
 <style scoped>
 .wrapper {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
   background-color: antiquewhite;
-  min-height: 100vh; 
 }
 .poster {
   display: flex;
