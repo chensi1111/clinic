@@ -44,22 +44,22 @@ import { useRouter } from 'vue-router';
 const router=useRouter()
 const navs = ref([
   { name: '首頁' ,path:'/'},
-  { name: '最新消息',path:'/news' },
-  { name: '醫學美容',path:'/category/醫學美容/肉毒' },
-  { name: '再生醫學',path:'/category/再生醫學/抗衰老血液淨化' },
-  { name: '牙科類',path:'/category/牙科類/人工植牙' },
-  { name: '精準醫學',path:'/category/精準醫學/精準化益生菌' },
+  { name: '最新消息',path:'/category/最新消息/益生菌新紀元' },
+  { name: '醫學美容',path:'/category/醫學美容/肉毒桿菌' },
+  { name: '再生醫學',path:'/category/再生醫學/PRP' },
+  { name: '預防醫學',path:'/category/預防醫學/重覆經顱磁刺rTMS' },
+  { name: '精準醫學',path:'/category/精準醫學/癌症風險指標DR.70' },
   { name: '生化檢測',path:'/category/生化檢測/各項檢測套組' },
-  { name: '其他',path:'/category/其他/其他' },
+  { name: '其他',path:'/category/其他/人工植牙' },
   ]);
   const sideNavs=ref([
-  { name: '最新消息',path:'/news' },
-  { name: '醫學美容',path:'/category/醫學美容/肉毒' },
-  { name: '再生醫學',path:'/category/再生醫學/抗衰老血液淨化' },
-  { name: '牙科類',path:'/category/牙科類/人工植牙' },
-  { name: '精準醫學',path:'/category/精準醫學/精準化益生菌' },
+  { name: '最新消息',path:'/category/最新消息/益生菌新紀元' },
+  { name: '醫學美容',path:'/category/醫學美容/肉毒桿菌' },
+  { name: '再生醫學',path:'/category/再生醫學/PRP' },
+  { name: '預防醫學',path:'/category/預防醫學/重覆經顱磁刺rTMS' },
+  { name: '精準醫學',path:'/category/精準醫學/癌症風險指標DR.70' },
   { name: '生化檢測',path:'/category/生化檢測/各項檢測套組' },
-  { name: '其他',path:'/category/其他/其他' },
+  { name: '其他',path:'/category/其他/人工植牙' },
   ])
 const toPath=(route,option)=>{
   if(option){

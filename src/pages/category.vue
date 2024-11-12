@@ -21,7 +21,7 @@
         <div
           v-for="(nav, index) in nav3"
           :key="index"
-          v-if="categoryName === '牙科類'"
+          v-if="categoryName === '預防醫學'"
         >
           <div class="nav" @click="toInfo(nav.path,nav.name)" :class="{ hover: currentInfo==nav.name }">{{ nav.name }}</div>
         </div>
@@ -43,6 +43,13 @@
           v-for="(nav, index) in nav6"
           :key="index"
           v-if="categoryName === '其他'"
+        >
+          <div class="nav" @click="toInfo(nav.path,nav.name)" :class="{ hover: currentInfo==nav.name }">{{ nav.name }}</div>
+        </div>
+        <div
+          v-for="(nav, index) in nav7"
+          :key="index"
+          v-if="categoryName === '最新消息'"
         >
           <div class="nav" @click="toInfo(nav.path,nav.name)" :class="{ hover: currentInfo==nav.name }">{{ nav.name }}</div>
         </div>
@@ -76,30 +83,47 @@ const categoryName=computed(()=>{
 })
 
 const nav1=ref([
-    {name:'肉毒',path:'/category/醫學美容/肉毒'},
+    {name:'肉毒桿菌',path:'/category/醫學美容/肉毒桿菌'},
     {name:'玻尿酸',path:'/category/醫學美容/玻尿酸'},
     {name:'消脂針',path:'/category/醫學美容/消脂針'},
     {name:'美白針劑',path:'/category/醫學美容/美白針劑'},
+    {name:'驚奇電音波V Shock',path:'/category/醫學美容/驚奇電音波V Shock'},
+    {name:'膠原蛋白針劑',path:'/category/醫學美容/膠原蛋白針劑'},
     ])
 const nav2=ref([
-    {name:'抗衰老血液淨化',path:'/category/再生醫學/抗衰老血液淨化'},
-    {name:'驚奇電音波',path:'/category/再生醫學/驚奇電音波'},
-    {name:'外秘體',path:'/category/再生醫學/外秘體'},
+    {name:'PRP',path:'/category/再生醫學/PRP'},
     {name:'幹細胞',path:'/category/再生醫學/幹細胞'},
+    {name:'粒線體',path:'/category/再生醫學/粒線體'},
+    {name:'外泌體',path:'/category/再生醫學/外泌體'},
     ])
 const nav3=ref([
-    {name:'人工植牙',path:'/category/牙科類/人工植牙'},
-    {name:'牙齒矯正',path:'/category/牙科類/牙齒矯正'}
+    {name:'重覆經顱磁刺rTMS',path:'/category/預防醫學/重覆經顱磁刺rTMS'},
+    {name:'靜脈雷射ILIB',path:'/category/預防醫學/靜脈雷射ILIB'},
+    {name:'體外反搏裝置eecp',path:'/category/預防醫學/體外反搏裝置eecp'},
+    {name:'抗衰老血液淨化”MCS+”',path:'/category/預防醫學/抗衰老血液淨化”MCS+”'},
     ])
 const nav4=ref([
-    {name:'精準化益生菌',path:'/category/精準醫學/精準化益生菌'},
-    {name:'癌症風險指標 DR.70',path:'/category/精準醫學/癌症風險指標'}
+    {name:'癌症風險指標DR.70',path:'/category/精準醫學/癌症風險指標DR.70'},
+    {name:'循環腫瘤細胞(CTCs)',path:'/category/精準醫學/循環腫瘤細胞(CTCs)'},
+    {name:'CIK細胞療法',path:'/category/精準醫學/CIK細胞療法'},
+    {name:'精準益生菌檢快篩檢測',path:'/category/精準醫學/精準益生菌檢快篩檢測'},
     ])
 const nav5=ref([
     {name:'各項檢測套組',path:'/category/生化檢測/各項檢測套組'},
     ])
 const nav6=ref([
-    {name:'其他',path:'/category/其他/其他'},
+    {name:'人工植牙',path:'/category/其他/人工植牙'},
+    {name:'牙材服務',path:'/category/其他/牙材服務'},
+    {name:'金融服務',path:'/category/其他/金融服務'},
+    {name:'命理服務',path:'/category/其他/命理服務'},
+    {name:'禮盒服務',path:'/category/其他/禮盒服務'},
+    {name:'室內設計',path:'/category/其他/室內設計'},
+    {name:'勞資糾紛',path:'/category/其他/勞資糾紛'},
+    {name:'品牌設計',path:'/category/其他/品牌設計'},
+    {name:'基因檢測',path:'/category/其他/基因檢測'},
+    ])
+const nav7=ref([
+    {name:'益生菌新紀元',path:'/category/最新消息/益生菌新紀元'},
     ])
 
 const route=useRoute()
@@ -114,7 +138,7 @@ const toInfo=(route,name)=>{
 }
 const currentInfo=ref()
 watch(() => route.path, (newPath) => {
-  const currentNav = [...nav1.value, ...nav2.value, ...nav3.value, ...nav4.value, ...nav5.value, ...nav6.value]
+  const currentNav = [...nav1.value, ...nav2.value, ...nav3.value, ...nav4.value, ...nav5.value, ...nav6.value,...nav7.value]
     .find(nav => nav.path === newPath);
   if (currentNav) {
     navSelect.value = currentNav.path; 
@@ -132,7 +156,7 @@ const filteredNavs = computed(() => {
       return nav1.value;
     case '再生醫學':
       return nav2.value;
-    case '牙科類':
+    case '預防醫學':
       return nav3.value;
     case '精準醫學':
       return nav4.value;
@@ -140,6 +164,8 @@ const filteredNavs = computed(() => {
       return nav5.value;
     case '其他':
       return nav6.value;
+    case '最新消息':
+      return nav7.value;
     default:
       return [];
   }
@@ -170,16 +196,18 @@ const filteredNavs = computed(() => {
 }
 .navs {
   width: 20%;
-  height: 500px;
+  min-height: 500px;
   margin-right: 50px;
   border: 2px solid gray;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 .nav {
   font-size: 20px;
   margin: 10px;
   padding: 10px 5px;
   font-weight: 600;
+  border-bottom: 2px solid transparent;
 }
 .nav.hover{
   border-bottom: 2px solid gray;

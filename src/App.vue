@@ -1,17 +1,12 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <ScrollTopButton></ScrollTopButton>
   </div>
 </template>
 
 <script>
-import ScrollTopButton from './components/scrollTopButton.vue';
 export default {
   name: 'App',
-  components: {
-    ScrollTopButton
-  }
 };
 </script>
 <style>

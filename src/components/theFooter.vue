@@ -12,7 +12,7 @@
           <div class="contactInfo">電話:0982-852-438</div>
         </div>
         <div class="qrCode">
-          <img src="../assets/qrCode.jpg" alt="" />
+          <img src="../assets/qrCode.png" alt="" />
         </div>
       </div>
       <div class="map">
@@ -90,6 +90,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 img {
   width: 100%;

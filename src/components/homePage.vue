@@ -16,15 +16,21 @@
 <script setup lang="js">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import imageUrl from '../assets/fake.jpg';
+import image1 from '../assets/醫學美容.jpg';
+import image2 from '../assets/再生醫學.jpg';
+import image3 from '../assets/預防醫學.jpg';
+import image4 from '../assets/精準醫學.jpg';
+import image5 from '../assets/生化檢測.jpg';
+import image6 from '../assets/其他.jpg';
+
 const router=useRouter()
 const products=ref([
-  {name:'醫學美容',img:imageUrl,path:'/category/醫學美容'},
-  {name:'再生醫學',img:imageUrl,path:'/category/再生醫學'},
-  {name:'牙科類',img:imageUrl,path:'/category/牙科類'},
-  {name:'精準醫學',img:imageUrl,path:'/category/精準醫學'},
-  {name:'生化檢測',img:imageUrl,path:'/category/生化檢測'},
-  {name:'其他',img:imageUrl,path:'/category/其他' },
+  {name:'醫學美容',img:image1,path:'/category/醫學美容/肉毒桿菌'},
+  {name:'再生醫學',img:image2,path:'/category/再生醫學/PRP'},
+  {name:'預防醫學',img:image3,path:'/category/預防醫學/重覆經顱磁刺rTMS'},
+  {name:'精準醫學',img:image4,path:'/category/精準醫學/癌症風險指標DR.70'},
+  {name:'生化檢測',img:image5,path:'/category/生化檢測/各項檢測套組'},
+  {name:'其他',img:image6,path:'/category/其他/人工植牙' },
 ])
 const toPath=(route)=>{
   router.push({
@@ -72,6 +78,8 @@ const toPath=(route)=>{
   transform: translateX(-50%);
   width: 100%;
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px black;
 }
 .pic{
   border: 2px solid gray;
