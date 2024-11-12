@@ -100,15 +100,15 @@ const filteredInfo = computed(() => {
 });
 const downloadFile=computed(()=>{
   if(props.info==='驚奇電音波V Shock'){
-    return './驚奇電音波V Shock.pdf'
+    return '/clinic/驚奇電音波V Shock.pdf'
   }else if(props.info==='抗衰老血液淨化”MCS+”'){
-  return './抗衰老血液淨化”MCS+”.pdf'
+  return '/clinic/抗衰老血液淨化”MCS+”.pdf'
 }else if(props.info==='外泌體'){
-  return './外泌體.pdf'
+  return '/clinic/外泌體.pdf'
 }else if(props.info==='循環腫瘤細胞(CTCs)'){
-  return './循環腫瘤細胞(CTCs).pdf'
+  return '/clinic/循環腫瘤細胞(CTCs).pdf'
 }else if(props.info==='精準益生菌檢快篩檢測'){
-  return './精準益生菌檢快篩檢測.pdf'
+  return '/clinic/精準益生菌檢快篩檢測.pdf'
 }
 return null
 })
