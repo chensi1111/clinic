@@ -36,7 +36,7 @@ const routes = [
 
 
 export const router = createRouter({
-  history: createWebHashHistory('/clinic/'),
+  history: createWebHashHistory(),
   routes,
 });
 
