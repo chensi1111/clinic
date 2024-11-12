@@ -4,7 +4,7 @@
       <div class="infoName">{{ filteredInfo.name }}</div>
       <div class="infoIntro" v-html="filteredInfo.introduce"></div>
       <div class="infoPro">{{ filteredInfo.produce }}</div>
-      <div class="img"><img :src="filteredInfo.img" alt=""></div>
+      <div class="img" v-if="filteredInfo.img"><img :src="filteredInfo.img" alt=""></div>
       <div class="downloadContainer" v-if="downloadFile">
         <div class="downloadMsg">點擊下載 : </div>
         <a class="download"  :href="downloadFile" download>{{ filteredInfo.name }}</a>
