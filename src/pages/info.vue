@@ -1,7 +1,7 @@
 <template>
   <div class="infoContainer">
     <div v-if="filteredInfo" class="infos">
-      <div class="infoName">{{ filteredInfo.name }}</div>
+      <div class="infoName">{{ filteredInfo.name }}<br><span>(新知介紹)</span></div>
       <div class="infoIntro" v-html="filteredInfo.introduce"></div>
       <div class="infoPro">{{ filteredInfo.produce }}</div>
       <div class="img" v-if="filteredInfo.img"><img :src="filteredInfo.img" alt=""></div>
@@ -27,6 +27,7 @@ import img2 from '../assets/PRP.jpg'
 import img3 from '../assets/各項檢測套組.jpg'
 import img4 from '../assets/精準益生菌檢快篩檢測.jpg'
 import img5 from '../assets/最新消息.jpg'
+import img6 from '../assets/好物推薦.jpg'
 const props = defineProps({
   id:{
     type: String,
@@ -39,6 +40,7 @@ const props = defineProps({
 });
 const news=ref([
   {name:'益生菌新紀元',img:img5},
+  {name:'好物推薦',img:img6},
   ])
 const cata1=ref([
   {name:'肉毒桿菌',introduce:'放鬆肌肉、改善皺紋，打造小臉線條。',produce:'(皇家、天使、BOTOX)'},
@@ -133,6 +135,10 @@ return null
   margin: 10px;
   text-align: center;
 }
+.infoName span{
+  color: red;
+  font-size: 20px;
+}
 .infoIntro {
   font-size: 22px;
   margin-bottom: 10px;
@@ -203,6 +209,9 @@ img{
   .infoName{
     font-size: 20px;
   }
+  .infoName span{
+  font-size: 18px;
+}
   .infoIntro {
   font-size: 16px;
 }

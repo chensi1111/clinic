@@ -124,6 +124,7 @@ const nav6=ref([
     ])
 const nav7=ref([
     {name:'益生菌新紀元',path:'/category/最新消息/益生菌新紀元'},
+    {name:'好物推薦',path:'/category/最新消息/好物推薦'},
     ])
 
 const route=useRoute()
